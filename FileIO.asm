@@ -11,7 +11,8 @@ DD 1;start reading from this Logical Block Address or LBA
 DD 0; use for big LBAs
 
 LOADSTART:
-MOV DS, 0; may not need this, but it might be how to zero the Data Segment register
+XOR AX,AX;clear AX
+MOV DS,AX;clear DS
 MOV SI, DAPS;
 MOV AH, 42; AH is used by the BIOS, and needs to be 42 for LBA ATA reading in realmode
 MOV DL, 0x80; drive identifier, 0x80 is somewhat standard
