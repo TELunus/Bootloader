@@ -1,0 +1,6 @@
+c.img is a flat HD image with
+	20805 cyls
+	16 heads
+	63 sectors per track
+	20971440 sectors
+	10239.96 mb

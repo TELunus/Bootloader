@@ -9,3 +9,6 @@
 
 # Executable files
 *.EXE
+
+# HD images for now
+*.img
