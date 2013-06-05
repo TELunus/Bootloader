@@ -11,7 +11,7 @@ MOV SS, AX; stack starts the same place as our data segment for now
 MOV SP, 0xFF00;stick the stack pointer far away
 
 
-MOV AX, 0x07c0;Needed for setting DS;
+MOV AX, 0xF000;Needed for setting DS;
 MOV DS, AX;set DS to the begining of our program
 MOV SI, STRING;loads the string beginging into SI
 
