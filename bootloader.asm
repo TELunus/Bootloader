@@ -27,7 +27,7 @@ DAPS:
 ;Disk Address Packet Structure
 DB 16;packets are 16 bytes
 DB 0;
-DW 16; how many sectors do you want to transfer?
+DW 4; how many sectors do you want to transfer?  for now 4 because 0xF000+(512*4)=0xF800
 DW 0x0000;     :yyyy
 DW 0xF000; xxxx:
 ;xxxx:yyyy is the address to load into, should be an even number
