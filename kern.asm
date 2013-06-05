@@ -1,5 +1,5 @@
 BITS 32;use 32 bit mode
-ORG 0x0200;the bootloader will load us behind it's end
+ORG 0xF000;KEEP IN SYNC WITH WHERE THE LOADER LOADS US
 
 IDT:
 HD_I:
