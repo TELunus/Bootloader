@@ -98,40 +98,41 @@ WORKED:
 ;sucsess code here
 MOV SI, YA;load the all cool string
 call PRINT_SI;print the string
-JMP START_32;TODO make this jump to the kernel setup
+;JMP START_32;TODO make this jump to the kernel setup
 
 
 END_16:
 jmp END_16; jump to the end of the program to have a never ending loop
 
 lgdt [GDT_DESC];load the GDT descriptor
-MOV EAX, CR0;load Control Register 0 into a more accessible register
-OR AL, 1;set the Protection Enable bit
-MOV CR0, EAX;store the Control Register back
-
-START_32:
-BITS 32;we are now in 32 bit mode
-MOV EDI, 0xb8000;beginning of text vido memory
-MOV ESI, EXTRA_BITS;load the 32 bit indicator string
-call PRNT_32;call the 32 bit print
-JMP END_32;done now
-
-PRNT_32:
-MOV AH, 0x0F; attribute
-
-PRNT_LOOP_32:
-MOV Al,byte [ESI];
-ADD ESI, 1;
-OR AL,AL;check if AL is 0
-JZ PRNT_32_END;jump on last instruction gave 0
-MOV word [DS:EDI],AX;AX to DS:EDI
-ADD EDI, 2;
-jmp PRNT_LOOP_32
-PRNT_32_END:
-ret
-
-END_32:
-jmp END_32;jump to the end to make an infinate loop
+;lets not go to 32 bit yet, lets test the load
+;MOV EAX, CR0;load Control Register 0 into a more accessible register
+;OR AL, 1;set the Protection Enable bit
+;MOV CR0, EAX;store the Control Register back
+;
+;START_32:
+;BITS 32;we are now in 32 bit mode
+;MOV EDI, 0xb8000;beginning of text vido memory
+;MOV ESI, EXTRA_BITS;load the 32 bit indicator string
+;call PRNT_32;call the 32 bit print
+;JMP END_32;done now
+;
+;PRNT_32:
+;MOV AH, 0x0F; attribute
+;
+;PRNT_LOOP_32:
+;MOV Al,byte [ESI];
+;ADD ESI, 1;
+;OR AL,AL;check if AL is 0
+;JZ PRNT_32_END;jump on last instruction gave 0
+;MOV word [DS:EDI],AX;AX to DS:EDI
+;ADD EDI, 2;
+;jmp PRNT_LOOP_32
+;PRNT_32_END:
+;ret
+;
+;END_32:
+;jmp END_32;jump to the end to make an infinate loop
 
 
 times 436-($-$$) DB 0; fill the remaining memory, up to 436, with 0s
