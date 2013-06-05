@@ -1,5 +1,5 @@
 ;BITS 32;use 32 bit mode
-ORG 0xF000;KEEP IN SYNC WITH WHERE THE LOADER LOADS US
+ORG 0x0000;set the orgin to 0, remember we start where the loader loaded us
 
 STRING:
 db 'Yo, kernel here ',0;a string for fun
@@ -11,7 +11,7 @@ MOV SS, AX; stack starts the same place as our data segment for now
 MOV SP, 0xFF00;stick the stack pointer far away
 
 
-MOV AX, 0xF000;Needed for setting DS;
+MOV AX, 0x0000;Needed for setting DS;
 MOV DS, AX;set DS to the begining of our program
 MOV SI, STRING;loads the string beginging into SI
 
