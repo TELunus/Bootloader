@@ -32,7 +32,7 @@
 00000000000i[     ]   SB16 support: yes
 00000000000i[     ]   USB support: yes
 00000000000i[     ]   VGA extension support: vbe cirrus voodoo
-00000000000i[MEM0 ] allocated memory at 04540020. after alignment, vector=04541000
+00000000000i[MEM0 ] allocated memory at 04640020. after alignment, vector=04641000
 00000000000i[MEM0 ] 32.00MB
 00000000000i[MEM0 ] mem block size = 0x00100000, blocks=32
 00000000000i[MEM0 ] rom at 0xfffe0000/131072 ('../BIOS-bochs-latest')
@@ -42,7 +42,7 @@
 00000000000i[DEV  ] PIIX3 PCI-to-ISA bridge present at device 1, function 0
 00000000000i[     ] init_dev of 'cmos' plugin device by virtual method
 00000000000i[CMOS ] Using local time for initial clock
-00000000000i[CMOS ] Setting initial clock to: Sun Jun 02 00:39:20 2013 (time0=1370158760)
+00000000000i[CMOS ] Setting initial clock to: Wed Jun 05 01:06:43 2013 (time0=1370419603)
 00000000000i[     ] init_dev of 'dma' plugin device by virtual method
 00000000000i[DMA  ] channel 4 used by cascade
 00000000000i[     ] init_dev of 'pic' plugin device by virtual method
@@ -199,4 +199,3 @@
 00002762646i[BIOS ] ata0-0: PCHS=16383/16/63 translation=lba LCHS=1024/255/63
 00006640688i[BIOS ] IDE time out
 00018703302i[BIOS ] Booting from 0000:7c00
-00018740856i[BIOS ] int13_harddisk: function 2ah unsupported, returns fail
